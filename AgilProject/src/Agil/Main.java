@@ -5,6 +5,7 @@ public class Main {
 		IDandPasswords idandPasswords = new IDandPasswords();
 		
 		LoignPageAgil	loginPage = new LoignPageAgil (idandPasswords.getLoginInfo());
+		LoignPageAgil	loginPage = new LoignPageAgil (idandPasswords.getLoginInfo());
 		
 		
 	}
