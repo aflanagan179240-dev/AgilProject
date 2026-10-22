@@ -80,11 +80,11 @@ public  class LoignPageAgil  implements ActionListener{
 				
 			}else {
 				messageLabel.setForeground(Color.RED);
-				messageLabel.setText("UserNotFound");
-			
-		
-		
+				messageLabel.setText("Wrong Password");
 	}
+		}else {
+			messageLabel.setForeground(Color.RED);
+			messageLabel.setText("User Name not found ");
 		}
 	}
 		
