@@ -59,6 +59,13 @@ public  class LoignPageAgil  implements ActionListener{
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		if(e.getSource()== resetButton) {
+			userIDField.setText("");
+			userPasswordField.setText("");
+			
+		}
+		
+		
 	if(e.getSource()== loginButton) {
 		String userId = userIDField.getText();
 		String password=  String.valueOf(userPasswordField.getPassword());
@@ -71,14 +78,14 @@ public  class LoignPageAgil  implements ActionListener{
 				WelcomePage welcomePage = new WelcomePage(userId);
 					
 				
-			}
+			}else {
+				messageLabel.setForeground(Color.RED);
+				messageLabel.setText("UserNotFound");
 			
+		
+		
+	}
 		}
-		
-	}else {
-		messageLabel.setForeground(Color.RED);
-		messageLabel.setText("UserNotFound");
-		
 	}
 		
 	}
