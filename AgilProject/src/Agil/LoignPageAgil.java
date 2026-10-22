@@ -1,4 +1,5 @@
 package Agil;
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -58,7 +59,22 @@ public  class LoignPageAgil  implements ActionListener{
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+	if(e.getSource()== loginButton) {
+		String userId = userIDField.getText();
+		String password=  String.valueOf(userPasswordField.getPassword());
+		
+		if(loginInfo.containsKey(userId)) {
+			if(loginInfo.get(userId).equals(password)) {
+				messageLabel.setForeground(Color.GREEN);
+				messageLabel.setText("login SuccesFul");
+				frame.dispose();
+				WelcomePage welcomePage = new WelcomePage(userId);
+				
+			}
+			
+		}
+		
+	}
 		
 	}
 			
