@@ -68,7 +68,8 @@ public  class LoignPageAgil  implements ActionListener{
 				messageLabel.setForeground(Color.GREEN);
 				messageLabel.setText("login SuccesFul");
 				frame.dispose();
-				//WelcomePage welcomePage = new WelcomePage(userId);
+				WelcomePage welcomePage = new WelcomePage(userId);
+				//ahuibcbue
 				
 			}
 			
