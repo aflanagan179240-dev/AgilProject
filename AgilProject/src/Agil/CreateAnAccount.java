@@ -22,6 +22,15 @@ public class CreateAnAccount {
 		passwordLabel.setBounds(0,0,250,35);
 		userLabel.setFont(new Font (null, Font.PLAIN,25));
 		passwordLabel.setFont(new Font(null,Font.PLAIN,25));
+		frame.add(userLabel);
+		frame.add(passwordLabel);
+		frame.add(userField);
+		frame.add(passwordField);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(420,420);
+		frame.setVisible(true);
+		frame.setLayout(null);
+		
 		
 	}
 	
