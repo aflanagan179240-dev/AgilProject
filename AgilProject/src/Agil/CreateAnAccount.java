@@ -23,14 +23,27 @@ public class CreateAnAccount extends JFrame  {
 		title.setBorder(BorderFactory.createEmptyBorder(25,10,10,10));
 		add(title, BorderLayout.NORTH);
 		JPanel form = new JPanel(new GridLayout());
-		form.setLayout(new GridLayout(3, 2, 10, 10));
+		form.setLayout(new GridLayout(4, 2, 10, 10));
 		form.add(new JLabel("Username:"));
 		form.add(username);
 		form.add(new JLabel("Password:"));
 		form.add(password);
 		form.add(new JLabel("Confirm password:"));
 		form.add(confirm);
-		
+		JButton register = new JButton ("crete Account");
+		JButton back = new JButton ("back to login");
+		form.add(register);
+		form.add(back);
+
+		add(form, BorderLayout.CENTER);
+        message.setBorder(BorderFactory.createEmptyBorder(8, 10, 20, 10));
+        add(message, BorderLayout.SOUTH);
+        register.addActionListener(e -> register());
+        back.addActionListener(e -> { new LoignPageAgil(null); dispose(); });
+        getRootPane().setDefaultButton(register);
+        setSize(480, 390);
+        setLocationRelativeTo(null);
+        setVisible(true);
 		
 		
 		
