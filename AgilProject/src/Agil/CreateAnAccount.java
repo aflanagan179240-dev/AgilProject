@@ -1,35 +1,37 @@
 package Agil;
 
-import java.awt.Font;
+import java.awt.*;
+import java.util.Arrays;
+import javax.swing.*;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class CreateAnAccount {
+public class CreateAnAccount extends JFrame  {
+	private JTextField username = new JTextField(18);
+    private JPasswordField password = new JPasswordField(18);
+    private JPasswordField confirm = new JPasswordField(18);
+     private JLabel message = new JLabel(" ", SwingConstants.CENTER);
+	
+	 public CreateAnAccount(){
+		super();
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLayout(new BorderLayout (12,12));
+		JLabel title = new JLabel("Create An  Account", SwingConstants.CENTER);
+		title.setFont(new Font("", Font.BOLD,22));
+		title.setBorder(BorderFactory.createEmptyBorder(25,10,10,10));
+		add(title, BorderLayout.NORTH);
+		JPanel form = new JPanel(new GridLayout());
+		form.setLayout(new GridLayout(3, 2, 10, 10));
+		form.add(new JLabel("Username:"));
+		form.add(username);
+		form.add(new JLabel("Password:"));
+		form.add(password);
+		form.add(new JLabel("Confirm password:"));
+		form.add(confirm);
 		
-	
-	JFrame frame = new JFrame();
-	JTextField userField = new JTextField();
-	JTextField passwordField = new JTextField();
-	
-	JLabel userLabel = new JLabel("UserName");
-	JLabel passwordLabel = new JLabel("Password");
-	JLabel reEnterPasswordLabel = new JLabel("Enter Password Again");
-	
-	CreateAnAccount( String User, String Password ){
-		userLabel.setBounds(0,0,200,35);
-		passwordLabel.setBounds(0,0,250,35);
-		userLabel.setFont(new Font (null, Font.PLAIN,25));
-		passwordLabel.setFont(new Font(null,Font.PLAIN,25));
-		frame.add(userLabel);
-		frame.add(passwordLabel);
-		frame.add(userField);
-		frame.add(passwordField);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(420,420);
-		frame.setVisible(true);
-		frame.setLayout(null);
+		
 		
 		
 	}
