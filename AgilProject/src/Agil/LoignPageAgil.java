@@ -15,6 +15,7 @@ public  class LoignPageAgil  implements ActionListener{
 	JFrame frame = new JFrame();
 	JButton loginButton = new JButton("Login");
 	JButton resetButton = new JButton("Reset");
+	JButton createAccount = new JButton("Create Account");
 	JTextField userIDField = new JTextField();
 	JPasswordField userPasswordField = new JPasswordField();
 	JLabel userIDLabel = new JLabel("userId");
@@ -43,6 +44,10 @@ public  class LoignPageAgil  implements ActionListener{
 		resetButton.setFocusable(false);
 		resetButton.addActionListener(this);
 		
+		createAccount.setBounds(360,200,100,25);
+		createAccount.setFocusable(false);
+		createAccount.addActionListener(this);
+		
 		frame.add(userIDField);
 		frame.add(userPasswordField);
 		frame.add(userIDLabel);
@@ -50,6 +55,7 @@ public  class LoignPageAgil  implements ActionListener{
 		frame.add(messageLabel);
 		frame.add(loginButton);
 		frame.add(resetButton);
+		frame.add(createAccount);
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(420,420);
@@ -86,6 +92,10 @@ public  class LoignPageAgil  implements ActionListener{
 			messageLabel.setForeground(Color.RED);
 			messageLabel.setText("User Name not found ");
 		}
+	}
+	if(e.getSource()== createAccount) {
+		
+		
 	}
 		
 	}
