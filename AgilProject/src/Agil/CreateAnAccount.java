@@ -3,19 +3,22 @@ package Agil;
 import java.awt.*;
 import java.util.Arrays;
 import javax.swing.*;
+import java.util.HashMap;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+	
 
 public class CreateAnAccount extends JFrame  {
 	private JTextField username = new JTextField(18);
     private JPasswordField password = new JPasswordField(18);
     private JPasswordField confirm = new JPasswordField(18);
      private JLabel message = new JLabel(" ", SwingConstants.CENTER);
-	
-	 public CreateAnAccount(){
-		super();
+     HashMap<String , String> loginInfo;
+
+	 public CreateAnAccount(HashMap<String , String> loginInfo){
+		this.loginInfo = loginInfo;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLayout(new BorderLayout (12,12));
 		JLabel title = new JLabel("Create An  Account", SwingConstants.CENTER);
@@ -57,11 +60,10 @@ public class CreateAnAccount extends JFrame  {
                 showError("Enter a username and password.");
             } else if (!Arrays.equals(pass, repeat)) {
                 showError("Passwords do not match.");
-            } else if (!IDandPasswords.register(user, pass)) {
+            }  else if (loginInfo.containsKey(user)) {
                 showError("That username is already taken.");
             } else {
-                JOptionPane.showMessageDialog(this, "Account created! You can now log in.");
-                new LoignPageAgil();
+                loginInfo.put(user, new String(pass));
                 dispose();
             }
         } catch (Exception ex) {
@@ -79,6 +81,7 @@ public class CreateAnAccount extends JFrame  {
 	private void showError(String text) {
         message.setForeground(Color.RED);
         message.setText(text);
-	}
+        
 	
+	}
 }
