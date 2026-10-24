@@ -48,6 +48,37 @@ public class CreateAnAccount extends JFrame  {
 		
 		
 	}
-	
+	private void register() {
+		String user = username.getText().trim();
+        char[] pass = password.getPassword();
+        char[] repeat = confirm.getPassword();
+        try {
+            if (user.isEmpty() || pass.length == 0) {
+                showError("Enter a username and password.");
+            } else if (!Arrays.equals(pass, repeat)) {
+                showError("Passwords do not match.");
+            } else if (!IDandPasswords.register(user, pass)) {
+                showError("That username is already taken.");
+            } else {
+                JOptionPane.showMessageDialog(this, "Account created! You can now log in.");
+                new LoignPageAgil();
+                dispose();
+            }
+        } catch (Exception ex) {
+            showError("Unable to save account: " + ex.getClass().getSimpleName());
+        } finally {
+            Arrays.fill(pass, '\0');
+            Arrays.fill(repeat, '\0');
+        }
+		
+		 
+		
+		
+		
+	}
+	private void showError(String text) {
+        message.setForeground(Color.RED);
+        message.setText(text);
+	}
 	
 }
