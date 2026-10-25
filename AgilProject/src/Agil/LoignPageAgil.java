@@ -79,7 +79,7 @@ public class LoignPageAgil extends JFrame implements ActionListener {
             dispose();
         }
     }
-
+    //Error of Commit So new COmmit 
     private void checkLogin() {
         String user = username.getText().trim();
         String pass = new String(password.getPassword());
