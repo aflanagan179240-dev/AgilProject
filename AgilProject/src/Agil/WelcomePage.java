@@ -1,7 +1,9 @@
 package Agil;
 
 import java.awt.Font;
+import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
@@ -9,6 +11,7 @@ public class WelcomePage {
 	
 	JFrame frame = new JFrame();
 	JLabel welcomeLabel = new JLabel("Hello");
+	
 	
 	WelcomePage (String userId){
 		welcomeLabel.setBounds(0,0,200,35);
@@ -19,6 +22,7 @@ public class WelcomePage {
 		frame.setSize(420,420);
 		frame.setVisible(true);
 		frame.setLayout(null);
+		
 		
 		
 		
