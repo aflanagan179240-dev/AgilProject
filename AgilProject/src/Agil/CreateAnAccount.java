@@ -19,7 +19,7 @@ public class CreateAnAccount extends JFrame  {
 
 	 public CreateAnAccount(HashMap<String , String> loginInfo){
 		this.loginInfo = loginInfo;
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setLayout(new BorderLayout (12,12));
 		JLabel title = new JLabel("Create An  Account", SwingConstants.CENTER);
 		title.setFont(new Font("", Font.BOLD,22));
@@ -64,7 +64,10 @@ public class CreateAnAccount extends JFrame  {
                 showError("That username is already taken.");
             } else {
                 loginInfo.put(user, new String(pass));
+                JOptionPane.showMessageDialog(this, "Account createted Succecfully");
+                new LoignPageAgil(loginInfo);
                 dispose();
+                
             }
         } catch (Exception ex) {
             showError("Unable to save account: " + ex.getClass().getSimpleName());
