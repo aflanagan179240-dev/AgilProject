@@ -11,19 +11,31 @@ public class WelcomePage {
 	
 	JFrame frame = new JFrame();
 	JLabel welcomeLabel = new JLabel("Hello");
+	private JButton b1 = new JButton ("Show Available Rooms");
 	
 	
 	WelcomePage (String userId){
-		welcomeLabel.setBounds(0,0,200,35);
+		frame.setLayout(null);
+		welcomeLabel.setBounds(50,50,200,35);
 		welcomeLabel.setFont(new Font (null,Font.PLAIN ,25));
 		welcomeLabel.setText("Hello" + userId);
 		frame.add(welcomeLabel);
+	
+		
+		
+		b1.setBounds(80,120,240,40);
+		frame.add(b1);
+		
+		b1.addActionListener(e ->{
+			new AvailableRooms("Booking Accomadation");
+			frame.dispose();
+		});
+		
+		
+		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(420,420);
 		frame.setVisible(true);
-		frame.setLayout(null);
-		
-		
 		
 		
 		

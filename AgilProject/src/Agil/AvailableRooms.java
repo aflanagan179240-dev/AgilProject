@@ -13,7 +13,7 @@ import javax.swing.JTextField;
 	  
 	  private JLabel l0 = new JLabel("Booking Accomidation Students");
 	  private JLabel l1 = new JLabel("Pick a Date");
-	  private JLabel l2 = new JLabel("Floor");
+	  private JLabel l2 = new JLabel("Floor Type");
 	  private JLabel l3 = new JLabel("Spefic Room");
 	  private JLabel l4 = new JLabel("Check out Time");
 	  private JLabel l5 = new JLabel("Booked");
@@ -21,19 +21,19 @@ import javax.swing.JTextField;
 	  
 	  private JPanel p1 = new JPanel();
 	  
-	  private JButton b1 = new JButton("Show Availble Rooms");
-	  private JButton b2 = new JButton("show Price");
+	  
+	  private JButton b1 = new JButton("show Price");
 	  
 	  Integer [] dates = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16
 			  				,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31};
 	  
 	 String [] theFloor = {"GroundFloor", "SecondFloor", "thirdFloor", "FourthFloor"};
 	 String [] typesOfRooms = {"En-Suite (€200)", "SharedRoom (€100)","PentHouse(€300 )","SingleRoom(€50 )", "Terrance(€150)"};
-	 
+	 String [] checkOutTimes = {"9:00 AM", "10:00 AM" , "11:00 AM", "12:00PM"};
 	 private JComboBox<Integer> c1 = new JComboBox<Integer> (dates);
 	 private JComboBox c2 = new JComboBox(theFloor);
 	 private JComboBox c3 = new JComboBox(typesOfRooms);
-	 private JComboBox c4 = new JComboBox();
+	 private JComboBox c4 = new JComboBox(checkOutTimes);
 	 
 	 
 	public AvailableRooms(String s) {
@@ -41,21 +41,32 @@ import javax.swing.JTextField;
 		
 		Font f = new Font("TimesRoman",Font.BOLD,20);
 		
-		l0.setFont(f);
 		
-		p1.setLayout(new GridLayout (8, 2));
-		add(p1);
-		p1.add(l0);
-		p1.add(l1);p1.add(c1);
-		p1.add(l2);p1.add(c2);
-		p1.add(l3);p1.add(c3);
-		p1.add(l4);
 		
-		p1.add(b1);
-		p1.add(b2);
+		p1.setLayout(new GridLayout (15, 15));
+		p1.add(l1);
+        p1.add(c1);
+
+        p1.add(l2);
+        p1.add(c2);
+
+        p1.add(l3);
+        p1.add(c3);
+
+        p1.add(l4);
+        p1.add(c4);
+
+        add(p1, BorderLayout.CENTER);
 		
+		
+		JPanel buttonPanel =  new JPanel();
+		buttonPanel.setLayout(new FlowLayout());
+		buttonPanel.add(b1);
+		add(buttonPanel,BorderLayout.SOUTH);
 		b1.addActionListener(this);
-		b2.addActionListener(this);
+		
+		
+		
 		
 		setSize(600,400);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
