@@ -7,6 +7,9 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
   public class AvailableRooms extends JFrame implements ActionListener {
@@ -16,11 +19,17 @@ import javax.swing.JTextField;
 	  private JLabel l2 = new JLabel("Floor Type");
 	  private JLabel l3 = new JLabel("Spefic Room");
 	  private JLabel l4 = new JLabel("Check out Time");
-	  private JLabel l5 = new JLabel("Booked");
 	  private JTextField t1 = new JTextField("0",40);
+	  private JLabel l5 = new JLabel("Room Availability");
+	  private JTextField t2 = new JTextField("");
 	  
 	  private JPanel p1 = new JPanel();
-
+	  
+	  private JMenuBar mbar = new JMenuBar();
+	  private JMenu options = new JMenu("Options");
+	  private JMenuItem help = new JMenuItem ("Help");
+	  private JMenuItem exit = new JMenuItem ("exit");
+	  private JMenuItem info = new JMenuItem ("info");
 	  
 	  private JButton b1 = new JButton("show Price");
 	  private JButton b2 = new JButton("Book Room");
@@ -45,8 +54,9 @@ import javax.swing.JTextField;
 		add(l0, BorderLayout.NORTH);
 		
 		
-		p1.setLayout(new GridLayout(4,2,15,15));
+		p1.setLayout(new GridLayout(6,4,15,15));
 		
+		t2.setEditable(false);;
 		
 		//Spaceing
 				
@@ -62,6 +72,9 @@ import javax.swing.JTextField;
 
         p1.add(l4);
         p1.add(c4);
+        
+        p1.add(l5);
+        p1.add(t2);
 
         add(p1, BorderLayout.CENTER);
 		
