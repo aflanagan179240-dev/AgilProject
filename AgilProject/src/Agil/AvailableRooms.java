@@ -7,12 +7,18 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
   public class AvailableRooms extends JFrame implements ActionListener {
 	  
 	  private JLabel l0 = new JLabel("Booking Accomidation Students");
 	  private JLabel l1 = new JLabel("Pick a Date");
 	  private JLabel l2 = new JLabel("Spefic Room");
 	  private JLabel l3 = new JLabel("Check out Time");
+	  private JLabel l4 = new JLabel("Booked");
+	  private JTextField t1 = new JTextField("0",40);
+	  
+	  private JPanel p1 = new JPanel();
 	  
 	  private JButton b1 = new JButton("Show Availble Rooms");
 	  private JButton b2 = new JButton("show Price");
@@ -27,6 +33,21 @@ import javax.swing.JLabel;
 	 private JComboBox c2 = new JComboBox(theFloor);
 	 private JComboBox c3 = new JComboBox(typesOfRooms);
 	 private JComboBox c4 = new JComboBox();
+	 
+	 
+	public AvailableRooms(String s) {
+		super(s);
+		
+		Font f = new Font("TimesRoman",Font.BOLD,20);
+		
+		l0.setFont(f);
+		
+		p1.setLayout(new GridLayout (8, 2));
+		
+		p1.add(l0);
+		
+		
+	}
 	 
 	  
 	@Override
