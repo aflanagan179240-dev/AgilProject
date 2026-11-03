@@ -38,12 +38,17 @@ import javax.swing.JTextField;
 	 
 	public AvailableRooms(String s) {
 		super(s);
+		setLayout(new BorderLayout());
+		l0.setFont(new Font("TimesRoman",Font.BOLD,20));
+		add(l0, BorderLayout.NORTH);
 		
-		Font f = new Font("TimesRoman",Font.BOLD,20);
+		
+		p1.setLayout(new GridLayout(4,2,15,15));
 		
 		
+		//Spaceing
+				
 		
-		p1.setLayout(new GridLayout (15, 15));
 		p1.add(l1);
         p1.add(c1);
 
