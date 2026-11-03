@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -24,6 +25,9 @@ import javax.swing.JTextField;
 	  private JTextField t2 = new JTextField("");
 	  //
 	  private JPanel p1 = new JPanel();
+	  
+	  private JCheckBox cb1 = new JCheckBox(" Added fee for checkout ");
+	  private JLabel lcb1 = new JLabel("€20 will be added if check out time is after 10:00AM");
 	  
 	  private JMenuBar mbar = new JMenuBar();
 	  private JMenu options = new JMenu("Options");
@@ -52,12 +56,12 @@ import javax.swing.JTextField;
 		setLayout(new BorderLayout());
 		l0.setFont(new Font("TimesRoman",Font.BOLD,20));
 		add(l0, BorderLayout.NORTH);
-		
+		lcb1.setForeground(Color.RED);
 		
 		p1.setLayout(new GridLayout(6,4,15,15));
 		
 		t2.setEditable(false);;
-		
+		cb1.setEnabled(false);
 		//Spaceing
 				
 		
@@ -76,6 +80,8 @@ import javax.swing.JTextField;
         p1.add(l5);
         p1.add(t2);
         
+       
+        
        this.setJMenuBar(mbar);
        mbar.add(options);
        options.add(Help);
@@ -84,14 +90,22 @@ import javax.swing.JTextField;
        
 
         add(p1, BorderLayout.CENTER);
+        JPanel checkPanel= new JPanel(new FlowLayout(FlowLayout.CENTER));
+        checkPanel.add(cb1);
+        checkPanel.add(lcb1);
 		
 		
-		JPanel buttonPanel =  new JPanel();
+		JPanel buttonPanel =  new JPanel(new FlowLayout( FlowLayout.CENTER));
 		buttonPanel.setLayout(new FlowLayout());
 		buttonPanel.add(b1);
 		buttonPanel.add(b2);
 		buttonPanel.add(b3);
-		add(buttonPanel,BorderLayout.SOUTH);
+		
+		JPanel bottomPanel = new JPanel(new GridLayout(2,1));
+		bottomPanel.add(buttonPanel);
+		bottomPanel.add(checkPanel);
+		add(bottomPanel,BorderLayout.SOUTH);
+		
 		b1.addActionListener(this);
 		b2.addActionListener(this);
 		b3.addActionListener(this);
