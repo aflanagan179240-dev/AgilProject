@@ -27,7 +27,7 @@ import javax.swing.JTextField;
 	  
 	  private JMenuBar mbar = new JMenuBar();
 	  private JMenu options = new JMenu("Options");
-	  private JMenuItem help = new JMenuItem ("Help");
+	  private JMenuItem Help = new JMenuItem ("Help");
 	  private JMenuItem exit = new JMenuItem ("exit");
 	  private JMenuItem info = new JMenuItem ("info");
 	  
@@ -75,6 +75,13 @@ import javax.swing.JTextField;
         
         p1.add(l5);
         p1.add(t2);
+        
+       this.setJMenuBar(mbar);
+       mbar.add(options);
+       options.add(Help);
+       options.add(info);
+       options.add(exit);
+       
 
         add(p1, BorderLayout.CENTER);
 		
@@ -98,7 +105,7 @@ import javax.swing.JTextField;
 	  
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		
 		
 	
 	
