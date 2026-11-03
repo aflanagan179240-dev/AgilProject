@@ -13,9 +13,10 @@ import javax.swing.JTextField;
 	  
 	  private JLabel l0 = new JLabel("Booking Accomidation Students");
 	  private JLabel l1 = new JLabel("Pick a Date");
-	  private JLabel l2 = new JLabel("Spefic Room");
-	  private JLabel l3 = new JLabel("Check out Time");
-	  private JLabel l4 = new JLabel("Booked");
+	  private JLabel l2 = new JLabel("Floor");
+	  private JLabel l3 = new JLabel("Spefic Room");
+	  private JLabel l4 = new JLabel("Check out Time");
+	  private JLabel l5 = new JLabel("Booked");
 	  private JTextField t1 = new JTextField("0",40);
 	  
 	  private JPanel p1 = new JPanel();
@@ -43,10 +44,22 @@ import javax.swing.JTextField;
 		l0.setFont(f);
 		
 		p1.setLayout(new GridLayout (8, 2));
-		
+		add(p1);
 		p1.add(l0);
+		p1.add(l1);p1.add(c1);
+		p1.add(l2);p1.add(c2);
+		p1.add(l3);p1.add(c3);
+		p1.add(l4);
 		
+		p1.add(b1);
+		p1.add(b2);
 		
+		b1.addActionListener(this);
+		b2.addActionListener(this);
+		
+		setSize(600,400);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setVisible(true);
 	}
 	 
 	  
