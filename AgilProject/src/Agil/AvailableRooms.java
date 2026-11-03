@@ -22,7 +22,7 @@ import javax.swing.JTextField;
 	  private JTextField t1 = new JTextField("0",40);
 	  private JLabel l5 = new JLabel("Room Availability");
 	  private JTextField t2 = new JTextField("");
-	  
+	  //
 	  private JPanel p1 = new JPanel();
 	  
 	  private JMenuBar mbar = new JMenuBar();
