@@ -20,15 +20,17 @@ import javax.swing.JTextField;
 	  private JTextField t1 = new JTextField("0",40);
 	  
 	  private JPanel p1 = new JPanel();
-	  
+
 	  
 	  private JButton b1 = new JButton("show Price");
+	  private JButton b2 = new JButton("Book Room");
+	  private JButton b3 = new JButton("Cancel Booking ");
 	  
 	  Integer [] dates = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16
 			  				,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31};
 	  
 	 String [] theFloor = {"GroundFloor", "SecondFloor", "thirdFloor", "FourthFloor"};
-	 String [] typesOfRooms = {"En-Suite (€200)", "SharedRoom (€100)","PentHouse(€300 )","SingleRoom(€50 )", "Terrance(€150)"};
+	 String [] typesOfRooms = {" €50 SingleRoom ", "€100 SharedRoom", " €150 Terrance", " €200 En-Suite " };
 	 String [] checkOutTimes = {"9:00 AM", "10:00 AM" , "11:00 AM", "12:00PM"};
 	 private JComboBox<Integer> c1 = new JComboBox<Integer> (dates);
 	 private JComboBox c2 = new JComboBox(theFloor);
@@ -67,10 +69,12 @@ import javax.swing.JTextField;
 		JPanel buttonPanel =  new JPanel();
 		buttonPanel.setLayout(new FlowLayout());
 		buttonPanel.add(b1);
+		buttonPanel.add(b2);
+		buttonPanel.add(b3);
 		add(buttonPanel,BorderLayout.SOUTH);
 		b1.addActionListener(this);
-		
-		
+		b2.addActionListener(this);
+		b3.addActionListener(this);
 		
 		
 		setSize(600,400);
