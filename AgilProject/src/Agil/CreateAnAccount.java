@@ -61,6 +61,7 @@ public class CreateAnAccount extends JFrame  {
             } else if (!Arrays.equals(pass, repeat)) {
                 showError("Passwords do not match.");
             }  else if (loginInfo.containsKey(user)) {
+            	
                 showError("That username is already taken.");
             } else {
                 loginInfo.put(user, new String(pass));
@@ -81,6 +82,24 @@ public class CreateAnAccount extends JFrame  {
 		
 		
 	}
+	String validateAccount(String user, String pass,
+            String confirmPass) {
+
+if (user.isEmpty() || pass.isEmpty()) {
+return "Enter a username and password.";
+}
+
+if (!pass.equals(confirmPass)) {
+return "Passwords do not match.";
+}
+
+if (loginInfo.containsKey(user)) {
+return "That username is already taken.";
+}
+
+return "Valid";
+}
+
 	private void showError(String text) {
         message.setForeground(Color.RED);
         message.setText(text);
