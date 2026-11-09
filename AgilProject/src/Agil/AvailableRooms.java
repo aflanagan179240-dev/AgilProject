@@ -23,6 +23,8 @@ import javax.swing.JTextField;
 	  private JTextField t1 = new JTextField("0",40);
 	  private JLabel l5 = new JLabel("Room Availability");
 	  private JTextField t2 = new JTextField("");
+	  private JLabel l6 =  new  JLabel("Show Price");
+	  private JTextField t3 = new JTextField("");
 	  //
 	  private JPanel p1 = new JPanel();
 	  
@@ -62,6 +64,7 @@ import javax.swing.JTextField;
 		
 		t2.setEditable(false);;
 		cb1.setEnabled(false);
+		t3.setEditable(false);
 		//Spaceing
 				
 		
@@ -80,6 +83,8 @@ import javax.swing.JTextField;
         p1.add(l5);
         p1.add(t2);
         
+        p1.add(l6);
+        p1.add(t3);
        
         
        this.setJMenuBar(mbar);
@@ -119,6 +124,11 @@ import javax.swing.JTextField;
 	  
 	@Override
 	public void actionPerformed(ActionEvent e) {
+			Object target = e.getSource();
+			
+			if(target ==b1) {
+				
+			}
 		
 		
 	
