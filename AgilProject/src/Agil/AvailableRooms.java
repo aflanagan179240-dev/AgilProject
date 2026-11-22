@@ -14,7 +14,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
   public class AvailableRooms extends JFrame implements ActionListener {
-	  
+	  int x =0;
 	  private JLabel l0 = new JLabel("Booking Accomidation Students");
 	  private JLabel l1 = new JLabel("Pick a Date");
 	  private JLabel l2 = new JLabel("Floor Type");

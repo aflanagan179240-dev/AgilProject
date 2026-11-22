@@ -1,10 +1,8 @@
 
 package Agil;
-//hello
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 import javax.swing.SwingUtilities;
-
 public class AvailableRoomsTest {
 
     @Test
