@@ -14,7 +14,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
   public class AvailableRooms extends JFrame implements ActionListener {
-	  int x =190;
+	
 	  private JLabel l0 = new JLabel("Booking Accomidation Students");
 	  private JLabel l1 = new JLabel("Pick a Date");
 	  private JLabel l2 = new JLabel("Floor Type");
@@ -37,9 +37,9 @@ import javax.swing.JTextField;
 	  private JMenuItem exit = new JMenuItem ("exit");
 	  private JMenuItem info = new JMenuItem ("info");
 	  
-	  private JButton b1 = new JButton("show Price");
-	  private JButton b2 = new JButton("Book Room");
-	  private JButton b3 = new JButton("Cancel Booking ");
+	  private JButton showPrice = new JButton("show Price");
+	  private JButton bookRoom = new JButton("Book Room");
+	  private JButton cancelBooking= new JButton("Cancel Booking ");
 	  
 	  Integer [] dates = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16
 			  				,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31};
@@ -102,18 +102,18 @@ import javax.swing.JTextField;
 		
 		JPanel buttonPanel =  new JPanel(new FlowLayout( FlowLayout.CENTER));
 		buttonPanel.setLayout(new FlowLayout());
-		buttonPanel.add(b1);
-		buttonPanel.add(b2);
-		buttonPanel.add(b3);
+		buttonPanel.add(showPrice);
+		buttonPanel.add(bookRoom);
+		buttonPanel.add(cancelBooking);
 		
 		JPanel bottomPanel = new JPanel(new GridLayout(2,1));
 		bottomPanel.add(buttonPanel);
 		bottomPanel.add(checkPanel);
 		add(bottomPanel,BorderLayout.SOUTH);
 		
-		b1.addActionListener(this);
-		b2.addActionListener(this);
-		b3.addActionListener(this);
+		showPrice.addActionListener(this);
+		bookRoom.addActionListener(this);
+		cancelBooking.addActionListener(this);
 		
 		
 		setSize(600,400);
@@ -126,7 +126,12 @@ import javax.swing.JTextField;
 	public void actionPerformed(ActionEvent e) {
 			Object target = e.getSource();
 			
-			if(target ==b1) {
+			if(target ==showPrice) {
+				
+				
+				
+			}
+			if(target == bookRoom) {
 				
 			}
 		
