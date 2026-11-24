@@ -13,4 +13,15 @@ public class RoomBooking {
 		
 		
 	}
+	
+	public boolean removeBooking(int date,String floor,String roomType) {
+	
+		String room =date + "," + floor + "," + roomType;
+		
+		if(bookedRoooms.contains(room)) { 
+			bookedRoooms.remove(room);
+			return true;
+		}
+		return false;
+	}
 }
