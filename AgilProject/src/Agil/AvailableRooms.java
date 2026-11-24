@@ -151,7 +151,10 @@ import javax.swing.JTextField;
 				if(c4.getSelectedIndex() >=2) {
 					price = price +20;
 					cb1.setSelected(true);
+				}else {
+					cb1.setSelected(false);
 				}
+				t3.setText(  price + "€");
 				
 			}
 			if(target == bookRoom) {
