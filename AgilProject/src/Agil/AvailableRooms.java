@@ -123,7 +123,9 @@ import javax.swing.JTextField;
 		setVisible(true);
 	}
 	
-	
+	private void addSampleData() {
+		
+	}
 	 
 	  
 	@Override
@@ -132,7 +134,24 @@ import javax.swing.JTextField;
 			
 			if(target ==showPrice) {
 				
+				int price = 0;
+				if(c3.getSelectedIndex()==0) {
+					price =50;
+				}
+				if(c3.getSelectedIndex()==1) {
+					price =100;
+				}
+				if(c3.getSelectedIndex()==2) {
+					price =150;
+				}
+				if(c3.getSelectedIndex()==3) {
+					price = 200;
+				}
 				
+				if(c4.getSelectedIndex() >=2) {
+					price = price +20;
+					cb1.setSelected(true);
+				}
 				
 			}
 			if(target == bookRoom) {
