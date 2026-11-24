@@ -1,5 +1,6 @@
 package Agil;
 import java.awt.*;
+import javax.swing.JOptionPane;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -15,12 +16,13 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
   public class AvailableRooms extends JFrame implements ActionListener {
 	
+	  private RoomBooking  booking = new RoomBooking();
 	  private JLabel l0 = new JLabel("Booking Accomidation Students");
 	  private JLabel l1 = new JLabel("Pick a Date");
 	  private JLabel l2 = new JLabel("Floor Type");
 	  private JLabel l3 = new JLabel("Spefic Room");
 	  private JLabel l4 = new JLabel("Check out Time");
-	  private JTextField t1 = new JTextField("0",40);
+	 
 	  private JLabel l5 = new JLabel("Room Availability");
 	  private JTextField t2 = new JTextField("");
 	  private JLabel l6 =  new  JLabel("Show Price");
@@ -120,6 +122,8 @@ import javax.swing.JTextField;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setVisible(true);
 	}
+	
+	
 	 
 	  
 	@Override
@@ -132,6 +136,21 @@ import javax.swing.JTextField;
 				
 			}
 			if(target == bookRoom) {
+				int date = (Integer) c1.getSelectedItem();
+				String floor = (String) c2.getSelectedItem();
+				String roomType = (String) c3.getSelectedItem();
+				
+				boolean result = booking.bookRoom(date, floor, roomType);
+					
+				if(result) {
+					
+					JOptionPane.showMessageDialog(this,"Room Booked SuccesFully!");
+				}else {
+					t2.setText("Not Availabel");
+					
+					JOptionPane.showMessageDialog(this,"Sorry This room is already booked!" );
+				}
+				
 				
 			}
 		
