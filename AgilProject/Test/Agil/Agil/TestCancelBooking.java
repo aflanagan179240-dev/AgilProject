@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 public class TestCancelBooking {
-
+	//test Red failed
     @Test
     public void testCancelBookedRoom() {
 
