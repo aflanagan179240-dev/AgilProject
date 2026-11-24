@@ -18,7 +18,36 @@ public class TestCancelBooking {
         boolean result = cancel.cancelRoom(
             15, "GroundFloor", "SingleRoom"
         );
-
+        
         assertTrue(result);
     }
+   
+    @Test
+    public void testCancelUnBookedRoom() {
+    	RoomBooking booking  = new RoomBooking();
+    	CancelBooking cancel = new CancelBooking(booking);
+    	boolean result = cancel.cancelRoom(15, "GroundFloor", "SingleRoom");
+    	
+    		assertFalse(result);
+    }
+    
+    		@Test
+    		public void testCancelRoomTwice() {
+    			RoomBooking booking = new RoomBooking();
+    			booking.bookRoom(15, "GroundFloor", "SingleRoom");
+    			CancelBooking  cancel = new CancelBooking(booking);
+    			cancel.cancelRoom(15,"GroundFloor","SingleRoom");
+    			boolean result = cancel.cancelRoom(15, "GroundFloor", "SingleRoom");
+    			
+    			assertFalse(result);
+    		}
+    		@Test
+    		public void testBookRoomAfterCancellation() {
+    			RoomBooking booking = new RoomBooking ();
+    			booking.bookRoom(15, "GroundFloor", "SingleRoom");
+    			CancelBooking cancel = new CancelBooking(booking);
+    			cancel.cancelRoom(15, "GroundFloor", "SingleRoom");
+    			boolean result = booking.bookRoom(15, "GroundFloor", "SingleRoom");
+    			assertTrue(result);
+    		}
 }
