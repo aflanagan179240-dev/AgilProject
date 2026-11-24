@@ -15,9 +15,9 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
   public class AvailableRooms extends JFrame implements ActionListener {
-	private RoomBooking bookings = new RoomBooking();
-	private CancelBooking cancel = new CancelBooking(bookings);
 	  private RoomBooking  booking = new RoomBooking();
+	private CancelBooking cancel = new CancelBooking(booking);
+	  
 	  private JLabel l0 = new JLabel("Booking Accomidation Students");
 	  private JLabel l1 = new JLabel("Pick a Date");
 	  private JLabel l2 = new JLabel("Floor Type");
@@ -169,7 +169,7 @@ import javax.swing.JTextField;
 					
 					JOptionPane.showMessageDialog(this,"Room Booked SuccesFully!");
 				}else {
-					t2.setText("Not Availabel");
+					t2.setText("Booked");
 					
 					JOptionPane.showMessageDialog(this,"Sorry This room is already booked!" );
 				}
