@@ -15,7 +15,8 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
   public class AvailableRooms extends JFrame implements ActionListener {
-	
+	private RoomBooking bookings = new RoomBooking();
+	private CancelBooking cancel = new CancelBooking(bookings);
 	  private RoomBooking  booking = new RoomBooking();
 	  private JLabel l0 = new JLabel("Booking Accomidation Students");
 	  private JLabel l1 = new JLabel("Pick a Date");
@@ -175,7 +176,19 @@ import javax.swing.JTextField;
 				
 				
 			}  if(target == cancelBooking) {
+				int date = (Integer) c1.getSelectedItem();
+				String floor = (String) c2.getSelectedItem();
+				String roomType = (String) c3.getSelectedItem();
 				
+				boolean success = cancel.cancelRoom(date, floor, roomType);
+				
+				if(success) {
+					t2.setText("Available");
+					
+					JOptionPane.showMessageDialog(this, "Booking cancelled succesfully");
+				}else {
+					JOptionPane.showMessageDialog(this, "No booking Found to cancel");
+				}
 			}
 		
 		
