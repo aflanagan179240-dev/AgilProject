@@ -19,9 +19,9 @@ public class RoomBookingTest {
     }
     
     @Test
-    public void testALreadyBookRoom() {
+    public void testAlreadyBookRoom() {
     	RoomBooking booking = new RoomBooking();
-    	booking.bookRoom(15, "GroundFloor", "Single Room");
+    	booking.bookRoom(15, "GroundFloor", "SingleRoom");// watach out for Spaces cause she fails
     	
     	boolean result = booking.bookRoom(15, "GroundFloor", "SingleRoom");
     	assertFalse(result);
