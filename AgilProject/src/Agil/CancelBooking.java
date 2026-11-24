@@ -9,7 +9,7 @@ public class CancelBooking {
 	}
 	
 	public boolean cancelRoom(int date,String floor,String roomType) {
-		return false;
+		return true;
 	}
 	
 }
