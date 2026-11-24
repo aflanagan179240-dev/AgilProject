@@ -49,5 +49,5 @@ public class TestCancelBooking {
     			cancel.cancelRoom(15, "GroundFloor", "SingleRoom");
     			boolean result = booking.bookRoom(15, "GroundFloor", "SingleRoom");
     			assertTrue(result);
-    		}//All 4 test Passed,wifi bad trying again
+    		}//All 4 test Passed,
 }

@@ -9,10 +9,8 @@ public class CancelBooking {
 	}
 	
 	public boolean cancelRoom(int date,String floor,String roomType) {
-		if(booking.removeBooking(date, floor, roomType)) {
-			return true;
-		}
-		return false;
+		
+		return booking.removeBooking(date, floor, roomType);
 	}
 	
 }
