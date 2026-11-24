@@ -7,13 +7,10 @@ public class RoomBooking {
 	// kinds woorks like an array in a sense
 	public boolean bookRoom(int date,String floor, String roomType) {
 		
-		String room = date + ","+ floor + "," +roomType;
-		if(bookedRoooms.contains(room)) {
-			return false;
-		}
+		String roomKey= date + ","+ floor + "," +roomType;
+
+		return bookedRoooms.add(roomKey);
 		
-		bookedRoooms.add(room);
-		return true;
 		
 	}
 }
